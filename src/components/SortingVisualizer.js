@@ -3,6 +3,7 @@ import Bar from './Bar';
 import Controls from './Controls';
 import { bubbleSort } from '../algorithms/bubbleSort';
 import { quickSort } from '../algorithms/quickSort';
+import { insertionSort } from '../algorithms/insertionSort'; // Import insertion sort
 
 const SortingVisualizer = () => {
   const [array, setArray] = useState([]);
@@ -47,7 +48,10 @@ const SortingVisualizer = () => {
 
   const handleSort = (type) => {
     setStartTime(Date.now());
-    const sortingAlgorithm = type === 'bubbleSort' ? bubbleSort : quickSort;
+    let sortingAlgorithm;
+    if (type === 'bubbleSort') sortingAlgorithm = bubbleSort;
+    else if (type === 'quickSort') sortingAlgorithm = quickSort;
+    else if (type === 'insertionSort') sortingAlgorithm = insertionSort; // Handle insertion sort
     sortingAlgorithm(array, setArray, setAnimations);
   };
 

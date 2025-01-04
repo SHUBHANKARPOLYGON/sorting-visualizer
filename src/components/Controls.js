@@ -6,6 +6,7 @@ const Controls = ({ handleGenerateArray, handleSort }) => {
       <button onClick={handleGenerateArray}>Generate Array</button>
       <button onClick={() => handleSort('bubbleSort')}>Bubble Sort</button>
       <button onClick={() => handleSort('quickSort')}>Quick Sort</button>
+      <button onClick={() => handleSort('insertionSort')}>Insertion Sort</button>
     </div>
   );
 };
