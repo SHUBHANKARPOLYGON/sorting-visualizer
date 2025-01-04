@@ -4,6 +4,7 @@ import Controls from './Controls';
 import { bubbleSort } from '../algorithms/bubbleSort';
 import { quickSort } from '../algorithms/quickSort';
 import { insertionSort } from '../algorithms/insertionSort'; // Import insertion sort
+import { mergeSort } from '../algorithms/mergeSort'; // Import merge sort
 
 const SortingVisualizer = () => {
   const [array, setArray] = useState([]);
@@ -52,6 +53,7 @@ const SortingVisualizer = () => {
     if (type === 'bubbleSort') sortingAlgorithm = bubbleSort;
     else if (type === 'quickSort') sortingAlgorithm = quickSort;
     else if (type === 'insertionSort') sortingAlgorithm = insertionSort; // Handle insertion sort
+    else if (type === 'mergeSort') sortingAlgorithm = mergeSort; // Handle merge sort
     sortingAlgorithm(array, setArray, setAnimations);
   };
 
